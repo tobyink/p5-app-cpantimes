@@ -1,4 +1,4 @@
-bin/cpanm
+bin/cpant
 Changes
 Makefile.PL
 MANIFEST			This list of files

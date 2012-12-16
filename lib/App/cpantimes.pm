@@ -1,5 +1,5 @@
 package App::cpantimes;
-our $VERSION = "1.501800";
+our $VERSION = "1.501801";
 
 =head1 NAME
 
