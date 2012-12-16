@@ -1,0 +1,7 @@
+bin/cpanm
+Changes
+Makefile.PL
+MANIFEST			This list of files
+README
+lib/App/cpantimes.pm
+t/happy_cpantesters.t
