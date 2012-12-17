@@ -35,6 +35,15 @@ WARNING
 	return $self;
 }
 
+# Need to clear _current_dist before each installation, to ensure reports
+# don't get sent based on incorrect info.
+sub install_module
+{
+	my ($self, @args) = @_;
+	delete $self->{_current_dist};
+	$self->SUPER::install_module(@args);
+}
+
 sub resolve_name
 {
 	my ($self, @args) = @_;
@@ -49,7 +58,7 @@ sub cpants_report
 	eval {
 		require Test::Reporter;
 		require Test::Reporter::Transport::Metabase;
-		-r $self->{_metabase_file};
+		-r $self->{_metabase_file} and exists $self->{_current_dist}{filename};
 	} or return;
 	
 	my $report = <<"REPORT";
