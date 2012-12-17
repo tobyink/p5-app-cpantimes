@@ -1,5 +1,8 @@
 See https://bitbucket.org/tobyink/p5-app-cpantimes for the latest development.
 
+1.501804	2012-12-17
+	- more cross-platform technique to locate metabase_id.json
+
 1.501803	2012-12-17
 	- don't even attempt to send reports for local tarballs
 

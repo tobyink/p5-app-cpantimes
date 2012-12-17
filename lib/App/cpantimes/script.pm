@@ -1,10 +1,15 @@
 package App::cpantimes::script;
 
-our $VERSION = "1.501803";
+our $VERSION = "1.501804";
 
 use 5.008;
 use strict;
 use base 'App::cpanminus::script';
+
+my $HOME =
+	defined $ENV{HOME}     ? $ENV{HOME} :
+	defined $ENV{APPDATA}  ? $ENV{APPDATA} :
+	die("Could not determine home directory!");
 
 sub new
 {
@@ -12,7 +17,10 @@ sub new
 	my $self = $class->SUPER::new(@args);
 	
 	$self->{_metabase_api}  = 'https://metabase.cpantesters.org/api/v1/';
-	$self->{_metabase_file} = "$ENV{HOME}/.cpantesters/metabase_id.json";
+	$self->{_metabase_file} = "File::Spec"->catfile(
+		$HOME,
+		qw< .cpantesters metabase_id.json >,
+	);
 
 	eval {
 		require Test::Reporter;
@@ -108,7 +116,7 @@ sub test
 	return 1 if $self->{notest};
 
 	my $oldlog  = $self->{log};
-	my $logfile = File::Spec->catfile($self->{home}, "test.log");
+	my $logfile = "File::Spec"->catfile($self->{home}, "test.log");
 	1 while unlink $logfile;
 
 	local $ENV{PERL_MM_USE_DEFAULT} = 1;
