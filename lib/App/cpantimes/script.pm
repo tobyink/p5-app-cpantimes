@@ -1,6 +1,6 @@
 package App::cpantimes::script;
 
-our $VERSION = "1.501802";
+our $VERSION = "1.501803";
 
 use 5.008;
 use strict;
