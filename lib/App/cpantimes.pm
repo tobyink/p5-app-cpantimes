@@ -1,5 +1,5 @@
 package App::cpantimes;
-our $VERSION = "1.501900";
+our $VERSION = "1.501901";
 
 =encoding utf8
 
