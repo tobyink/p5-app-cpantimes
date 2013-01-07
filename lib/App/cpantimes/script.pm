@@ -25,18 +25,19 @@ sub new
 	eval {
 		require Test::Reporter;
 		require Test::Reporter::Transport::Metabase;
+		require LWP::Protocol::https;
 		-r $self->{_metabase_file};
 	} or warn <<"WARNING";
 
 *** WARNING ***
-You are using cpantimes, a modified version of cpanminus with CPAN
-testers support, but it is not correctly configured. Please ensure
-Test::Reporter and Test::Reporter::Transport::Metabase are installed,
-and use the `metabase-profile` tool to create Metabase login details
-as "$self->{_metabase_file}".
+You are using cpantimes, a modified version of cpanminus with CPAN testers
+support, but it is not correctly configured. Please ensure Test::Reporter,
+Test::Reporter::Transport::Metabase and LWP::Protocol::https are installed,
+and use the `metabase-profile` tool to create Metabase login details as
+"$self->{_metabase_file}".
 
-Installation will now continue as normal, but test reports will NOT
-be sent!
+Installation will now continue as normal, but test reports will NOT be
+sent!
 
 WARNING
 
@@ -66,6 +67,7 @@ sub cpants_report
 	eval {
 		require Test::Reporter;
 		require Test::Reporter::Transport::Metabase;
+		require LWP::Protocol::https;
 		-r $self->{_metabase_file} and exists $self->{_current_dist}{filename};
 	} or return;
 	
