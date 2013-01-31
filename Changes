@@ -20,3 +20,6 @@ See https://bitbucket.org/tobyink/p5-app-cpantimes for the latest development.
 
 1.501901	2012-01-07
 	- check availability of LWP::Protocol::https (RT#82505)
+
+1.502100	2012-01-31
+	- based on cpanminus 1.5021
