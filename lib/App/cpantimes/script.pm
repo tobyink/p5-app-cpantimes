@@ -191,6 +191,7 @@ Options:
   --prompt                  Prompt when configure/build/test fails
   -l,--local-lib            Specify the install base to install modules
   -L,--local-lib-contained  Specify the install base to install all non-core modules
+  --verify                  Verify the integrity of distribution files. Defaults to false
   --auto-cleanup            Number of days that cpant's work directories expire in. Defaults to 7
 
 Commands:
@@ -215,7 +216,7 @@ You can also specify the default options in PERL_CPANM_OPT environment variable 
 
   export PERL_CPANM_OPT="--prompt --reinstall -l ~/perl --mirror http://cpan.cpantesters.org"
 
-Type `man cpant` or `perldoc cpant` for the more detailed explanation of the options.
+Type `man cpanm` or `perldoc cpanm` for the more detailed explanation of the options.
 
 HELP
 
