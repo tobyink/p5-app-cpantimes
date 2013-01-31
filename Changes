@@ -23,3 +23,8 @@ See https://bitbucket.org/tobyink/p5-app-cpantimes for the latest development.
 
 1.502100	2012-01-31
 	- based on cpanminus 1.5021
+
+1.502101	2012-01-31
+	- mention cpanm's new "--verify" option in help output
+	- fix fatpacking
+
